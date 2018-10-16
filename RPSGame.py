@@ -8,5 +8,5 @@ choices = ["Rock", "Paper", "Scissors"]
 # make the computer choose a weapon from the choices array at random
 computer_choice = choices[randint(0,2)]
 
-# print the choice to the terminal window
+# print the choice to the terminal window.
 print("computer chooses: ", computer_choice)
