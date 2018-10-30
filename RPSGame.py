@@ -5,6 +5,7 @@ from random import randint
 # arrays are 0-based -> the first item is 0, the second is 1, etc
 choices = ["Rock", "Paper", "Scissors"]
 player = False
+
 score1 = 5
 score2 = 5
 
@@ -15,6 +16,10 @@ computer_choice = choices[randint(0, 2)]
 restart = "Yes"
 
 while restart == "Yes":
+    print("==============================================")
+    print("Player lives:", score1, "/5")
+    print("Computer lives:", score2, "/5")
+    print("==============================================")
 
     # set player to True by making a selection
     print("Choose you weapon!")
@@ -57,24 +62,37 @@ while restart == "Yes":
     else:
         print("Check your spelling... that's not a valid choice\n")
 
-    # show computers choice in the terminal window
-    print("computer chooses: ", computer_choice)
+        # show computers choice in the terminal window
+    print("computer choose: ", computer_choice)
 
-    # scoreboard
-    print('You', score1, 'Computer', score2)
 
-    # when lives run out
-    if score1 == 0:
-        print("Sorry you are out of lives. Better luck next time.")
+    # check for win or lose
+    if score1 is 0:
+        print("You're out of lives! would you like to play again?")
+        choice = input("Y / N? ")
 
-    elif score2 == 0:
-        print("Congrats you win!")
+        if choice == "Y" or choice == "y":
+            score1 = 5
+            score2 = 5
+            player = False
+            computer = choices[randint(0, 2)]
+        elif choice == "N" or choice == "n"
+            print("You've had enough losing")
+            exit()
 
-    # when player or computer reaches 0, game ends
-    if score1 == 0:
-        print("Sorry, you lose.")
-        restart = input("Do you want to restart the game? Yes or No\n")
+    if score2 is 0:
+        print("You're out of lives! would you like to play again?")
 
-    elif score2 == 0:
-        print("You beat the computer!")
-        restart = input("Do you want to restart the game? Yes or No\n")
+        choice = input("Y / N? ")
+
+        if choice == "Y" or choice == "y":
+            score1 = 5
+            score2 = 5
+            player = False
+            computer = choices[randint(0, 2)]
+        elif choice == "N" or choice == "n":
+            print("You've had enough losing")
+            exit()
+
+    player = False
+    computer = choices[randint(0, 2)]
