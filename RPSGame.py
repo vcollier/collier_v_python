@@ -12,7 +12,10 @@ score2 = 5
 computer_choice = choices[randint(0, 2)]
 
 # set up our loop
-while score1 > 0 and score2 > 0:
+restart = "Yes"
+
+while restart == "Yes":
+
     # set player to True by making a selection
     print("Choose you weapon!")
     player = input("Rock, Paper, Scissors?\n")
@@ -67,6 +70,11 @@ while score1 > 0 and score2 > 0:
     elif score2 == 0:
         print("Congrats you win!")
 
-    # reset the game loop and start over again
-    player = False
-    computer_choice = choices[randint(0, 2)]
+    # when player or computer reaches 0, game ends
+    if score1 == 0:
+        print("Sorry, you lose.")
+        restart = input("Do you want to restart the game? Yes or No\n")
+
+    elif score2 == 0:
+        print("You beat the computer!")
+        restart = input("Do you want to restart the game? Yes or No\n")
