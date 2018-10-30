@@ -93,7 +93,7 @@ while player is False:
     print("computer chose: ", computer_choice)
 
 
-    # check for win or lose
+# check for win or lose
     if score1 is 0:
         winorlose("lose")
 
